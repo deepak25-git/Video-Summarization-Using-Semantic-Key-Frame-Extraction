@@ -64,6 +64,8 @@ graph LR
 .
 ├── assets/                     # Documentation diagrams and images
 │   ├── block_diagram.png       # System architecture block diagram
+│   ├── pn_junction_keyframe.png# Extracted keyframe example
+│   ├── pn_junction_summary.png # Generated summary visualization
 │   └── system_architecture.png # Process flowchart
 ├── complete_project.ipynb      # Main implementation notebook
 ├── demo_output.mp4             # Demonstration video file
@@ -105,7 +107,12 @@ graph LR
 
 ### 📊 Results & Discussion
 
-The system was tested on complex educational content (e.g., Semiconductor Physics). Below is an example of the generated summary for a lecture on **PN Junctions**:
+The system was tested on complex educational content (e.g., Semiconductor Physics). Below is an example of the generated results for a technical lecture on **PN Junctions**:
+
+<p align="center">
+  <img src="assets/pn_junction_keyframe.png" width="45%" alt="Extracted Keyframe">
+  <img src="assets/pn_junction_summary.png" width="45%" alt="Generated Summary">
+</p>
 
 > **PN Junction: A Comprehensive Overview**
 > 
@@ -127,7 +134,7 @@ The system was tested on complex educational content (e.g., Semiconductor Physic
 - **Author:** [Deepak Yadav K](https://github.com/deepak25-git)
 - **YOLOv8** by [Ultralytics](https://github.com/ultralytics/ultralytics)
 - **Whisper** by [OpenAI](https://github.com/openai/whisper)
-- **Paper Authors:** P.V. Praneeth, et al.
+- **Paper Authors:** P.V. Praneeth, Alamuri Maruthi Kaushik Reddy, Kona Harsha Vardhanu.
 
 ---
 <p align="center">Made with ❤️ for Advanced Learning</p>
