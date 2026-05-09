@@ -1,0 +1,14 @@
+opencv-python
+ultralytics
+openai-whisper
+transformers
+torch
+torchvision
+torchaudio
+nltk
+moviepy
+Pillow
+pandas
+numpy
+matplotlib
+tqdm
