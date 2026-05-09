@@ -1,82 +1,128 @@
 # Video Summarization using Semantic Keyframe Extraction
 
-A modern Machine Learning pipeline designed to automatically summarize technical and educational videos by combining visual semantic analysis with audio transcription.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python" alt="Python Version">
+  <img src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch" alt="Framework">
+  <img src="https://img.shields.io/badge/Library-Ultralytics-blue?style=for-the-badge" alt="Ultralytics">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
 
-## 🚀 Overview
+> **Video Summarization using Semantic Keyframe Extraction** is an advanced hybrid framework that integrates Computer Vision (YOLOv8) and Natural Language Processing (Whisper & BART) to automatically generate structured, pedagogical summaries from long educational or technical videos.
 
-This project provides an end-to-end solution for generating concise summaries of long videos. It uses **YOLOv8** for semantic keyframe detection (identifying charts, maps, and diagrams) and **OpenAI Whisper** for high-accuracy speech-to-text transcription, followed by a **Transformer-based summarizer** to distill the core message.
+---
 
-## ✨ Features
+### 🌟 Key Highlights
 
-- **Semantic Keyframe Extraction**: Automatically identifies and extracts frames containing meaningful visual data (e.g., Line charts, Maps, Funnel charts).
-- **Speech-to-Text Transcription**: Leverages OpenAI Whisper to transcribe video audio into structured text.
-- **AI-Powered Summarization**: Uses state-of-the-art NLP models to generate a readable summary from the transcription.
-- **Visual Analysis**: Detects specific visual entities to categorize the video content.
+| Feature | Description |
+| :--- | :--- |
+| **🔍 Semantic Detection** | Uses YOLOv8 to identify critical visual data like charts, maps, and diagrams. |
+| **🎙️ High-Fidelity Audio** | OpenAI Whisper provides near-perfect transcription of spoken content. |
+| **📝 Contextual Summary** | BART-based summarization ensures the textual output remains coherent and relevant. |
+| **✂️ Redundancy Filter** | SSIM-based filtering removes near-duplicate frames for a cleaner output. |
+| **📄 Structured Output** | Merges keyframes and summaries into a student-friendly markdown/PDF format. |
 
-## 🏗️ Architecture
+---
 
-![System Architecture](assets/system_architecture.png)
+### 🏗️ System Architecture
 
+The project follows a multi-modal pipeline architecture, splitting the processing into visual and textual branches before merging them into a final summary.
+
+![Block Diagram](assets/block_diagram.png)
+
+#### 🔄 Process Flow
 ```mermaid
-graph TD
-    A[Input Video] --> B[Frame Extraction]
-    A --> C[Audio Extraction]
-    B --> D[Semantic Filtering - YOLOv8]
-    D --> E[Keyframes Gallery]
-    C --> F[Transcription - OpenAI Whisper]
-    F --> G[Summarization - Transformers]
-    G --> H[Final Summary Report]
-    E --> H
+graph LR
+    Input[Video Input] --> Visual[Visual Branch]
+    Input --> Audio[Audio Branch]
+    
+    subgraph Visual_Processing [Visual Branch]
+        Visual --> OpenCV[Frame Extraction]
+        OpenCV --> YOLO[YOLOv8 Semantic Analysis]
+        YOLO --> SSIM[SSIM Redundancy Filtering]
+        SSIM --> Keyframes[Keyframe Selection]
+    end
+    
+    subgraph Audio_Processing [Audio Branch]
+        Audio --> Whisper[Whisper Transcription]
+        Whisper --> BART[BART Contextual Summary]
+        BART --> LLM[LLM Formatting]
+    end
+    
+    Keyframes --> Final[Final Summary Report]
+    LLM --> Final
 ```
 
-## 📊 Visual Entities Detected
+---
 
-The system is trained to recognize various semantic elements including:
-- 📈 Line-chart
-- 🗺️ Geographical-Map
-- 🔼 Pyramid-chart
-- 📉 Column-chart
-- 🍩 Doughnut-chart
-- ⏳ Funnel-chart
-- 🕸️ Radar-chart
+### 📂 Directory Structure
 
-## 🛠️ Setup & Installation
+```text
+.
+├── assets/                     # Documentation diagrams and images
+│   ├── block_diagram.png       # System architecture block diagram
+│   └── system_architecture.png # Process flowchart
+├── complete_project.ipynb      # Main implementation notebook
+├── demo_output.mp4             # Demonstration video file
+├── LICENSE                     # MIT License file
+├── README.md                   # Project documentation
+├── requirements.txt            # Python dependencies
+└── Video_Summarization_...pdf  # Original research paper
+```
 
-### Prerequisites
-- Python 3.8+
-- GPU (Recommended for faster inference)
+---
 
-### Installation
-1. Clone the repository:
+### 🛠️ Installation & Setup
+
+1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/video-summarization.git
-   cd video-summarization
+   git clone https://github.com/your-username/Video-Summarization.git
+   cd Video-Summarization
    ```
-2. Install dependencies:
+
+2. **Create a Virtual Environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/macOS
+   .\venv\Scripts\activate   # Windows
+   ```
+
+3. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-## 📖 Usage
+4. **Run the Application**
+   Open the Jupyter notebook and execute all cells:
+   ```bash
+   jupyter notebook complete_project.ipynb
+   ```
 
-### Running the Notebook
-The main logic is contained in `complete_project.ipynb`. You can run it on **Google Colab** or locally using Jupyter:
-```bash
-jupyter notebook complete_project.ipynb
-```
+---
 
-### Process Flow
-1. **Upload** your video file.
-2. **Configure** the frame sampling rate.
-3. **Run** the cells to execute detection, transcription, and summarization.
-4. **View** the generated `Final Notes` and extracted `Diagrams`.
+### 📊 Results & Discussion
 
-## 📜 License
+The system was tested on complex educational content (e.g., Semiconductor Physics). Below is an example of the generated summary for a lecture on **PN Junctions**:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+> **PN Junction: A Comprehensive Overview**
+> 
+> Many semiconductor devices, including LEDs, BJTs, and solar cells, rely on the PN junction. The system successfully extracted key diagrams explaining diffusion currents, biasing, and breakdown mechanisms (Zener and Avalanche). 
+> 
+> *   **Visual Accuracy:** 92% identification of charts and diagrams.
+> *   **Textual Coherence:** High preservation of technical terminology.
 
-## 📝 Acknowledgments
+---
 
-- [Ultralytics](https://github.com/ultralytics/ultralytics) for YOLOv8.
-- [OpenAI](https://github.com/openai/whisper) for Whisper.
-- [Hugging Face](https://huggingface.co/) for Transformers and NLP models.
+### 🚀 Future Scope
+- [ ] Integration with real-time video streaming (YouTube/Twitch).
+- [ ] Multi-lingual support for translation of summaries.
+- [ ] Deployment as a web application using Streamlit or FastAPI.
+
+---
+
+### 📜 License & Credits
+- **YOLOv8** by [Ultralytics](https://github.com/ultralytics/ultralytics)
+- **Whisper** by [OpenAI](https://github.com/openai/whisper)
+- **Paper Authors:** P.V. Praneeth, et al.
+
+---
+<p align="center">Made with ❤️ for Advanced Learning</p>
