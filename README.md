@@ -7,10 +7,6 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
-<p align="center">
-  <b>Developed by <a href="https://github.com/deepak25-git">Deepak Yadav K</a></b>
-</p>
-
 > **Video Summarization using Semantic Keyframe Extraction** is an advanced hybrid framework that integrates Computer Vision (YOLOv8) and Natural Language Processing (Whisper & BART) to automatically generate structured, pedagogical summaries from long educational or technical videos.
 
 ---
