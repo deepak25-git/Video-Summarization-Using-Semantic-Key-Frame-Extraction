@@ -7,6 +7,10 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
+<p align="center">
+  <b>Developed by <a href="https://github.com/deepak25-git">Deepak Yadav K</a></b>
+</p>
+
 > **Video Summarization using Semantic Keyframe Extraction** is an advanced hybrid framework that integrates Computer Vision (YOLOv8) and Natural Language Processing (Whisper & BART) to automatically generate structured, pedagogical summaries from long educational or technical videos.
 
 ---
@@ -75,8 +79,8 @@ graph LR
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/Video-Summarization.git
-   cd Video-Summarization
+   git clone https://github.com/deepak25-git/Video-Summarization-Using-Semantic-Key-Frame-Extraction.git
+   cd Video-Summarization-Using-Semantic-Key-Frame-Extraction
    ```
 
 2. **Create a Virtual Environment**
@@ -120,6 +124,7 @@ The system was tested on complex educational content (e.g., Semiconductor Physic
 ---
 
 ### 📜 License & Credits
+- **Author:** [Deepak Yadav K](https://github.com/deepak25-git)
 - **YOLOv8** by [Ultralytics](https://github.com/ultralytics/ultralytics)
 - **Whisper** by [OpenAI](https://github.com/openai/whisper)
 - **Paper Authors:** P.V. Praneeth, et al.
