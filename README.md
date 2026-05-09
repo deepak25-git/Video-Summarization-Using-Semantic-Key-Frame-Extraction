@@ -60,7 +60,6 @@ graph LR
 .
 ├── assets/                     # Documentation diagrams and images
 │   ├── block_diagram.png       # System architecture block diagram
-│   ├── pn_junction_visual_results.png # Visual extraction example
 │   ├── pn_junction_text_summary.png   # Automated summary document
 │   ├── pn_junction_whiteboard.png     # Hand-drawn content detection
 │   └── system_architecture.png # Process flowchart
@@ -106,12 +105,6 @@ graph LR
 
 The system was tested on technical educational content. Below is an example of the generated results for a lecture on **PN Junctions**:
 
-#### 🖼️ Visual Analysis & Keyframe Extraction
-The model identifies and extracts critical semantic frames, such as equilibrium diagrams and overview slides.
-
-<p align="center">
-  <img src="assets/pn_junction_visual_results.png" width="90%" alt="Visual Analysis Results">
-</p>
 
 #### 📝 Automated Technical Summary
 A structured summary is generated from the transcribed audio, preserving technical depth and terminology.
