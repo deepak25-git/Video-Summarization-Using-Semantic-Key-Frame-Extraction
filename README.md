@@ -60,8 +60,9 @@ graph LR
 .
 ├── assets/                     # Documentation diagrams and images
 │   ├── block_diagram.png       # System architecture block diagram
-│   ├── pn_junction_keyframe.png# Extracted keyframe example
-│   ├── pn_junction_summary.png # Generated summary visualization
+│   ├── pn_junction_visual_results.png # Visual extraction example
+│   ├── pn_junction_text_summary.png   # Automated summary document
+│   ├── pn_junction_whiteboard.png     # Hand-drawn content detection
 │   └── system_architecture.png # Process flowchart
 ├── complete_project.ipynb      # Main implementation notebook
 ├── demo_output.mp4             # Demonstration video file
@@ -103,16 +104,28 @@ graph LR
 
 ### 📊 Results & Discussion
 
-The system was tested on complex educational content (e.g., Semiconductor Physics). Below is an example of the generated results for a technical lecture on **PN Junctions**:
+The system was tested on technical educational content. Below is an example of the generated results for a lecture on **PN Junctions**:
+
+#### 🖼️ Visual Analysis & Keyframe Extraction
+The model identifies and extracts critical semantic frames, such as equilibrium diagrams and overview slides.
 
 <p align="center">
-  <img src="assets/pn_junction_keyframe.png" width="45%" alt="Extracted Keyframe">
-  <img src="assets/pn_junction_summary.png" width="45%" alt="Generated Summary">
+  <img src="assets/pn_junction_visual_results.png" width="90%" alt="Visual Analysis Results">
 </p>
 
-> **PN Junction: A Comprehensive Overview**
-> 
-> Many semiconductor devices, including LEDs, BJTs, and solar cells, rely on the PN junction. The system successfully extracted key diagrams explaining diffusion currents, biasing, and breakdown mechanisms (Zener and Avalanche). 
+#### 📝 Automated Technical Summary
+A structured summary is generated from the transcribed audio, preserving technical depth and terminology.
+
+<p align="center">
+  <img src="assets/pn_junction_text_summary.png" width="80%" alt="Generated Text Summary">
+</p>
+
+#### 🖍️ Whiteboard/Hand-Drawn Content Detection
+The system is capable of extracting hand-drawn diagrams and whiteboard notes, ensuring no critical pedagogical content is missed.
+
+<p align="center">
+  <img src="assets/pn_junction_whiteboard.png" width="60%" alt="Whiteboard Content Extraction">
+</p>
 > 
 > *   **Visual Accuracy:** 92% identification of charts and diagrams.
 > *   **Textual Coherence:** High preservation of technical terminology.
